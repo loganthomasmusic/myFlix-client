@@ -1,0 +1,1 @@
+Test the project using Parcel by running the command "parcel index.html"
