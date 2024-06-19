@@ -34,4 +34,4 @@ MovieCard.propTypes = {
             {movie.title}
         </div>
     );
-};
+};*/
