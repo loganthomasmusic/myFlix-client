@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { LoginView } from "../login-view/login-view";
+import { SignupView } from "../signup-view/signup-view";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 export const MainView = () => {
     const [movies, setMovies] = useState([]);
-
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
@@ -14,7 +17,6 @@ export const MainView = () => {
                 setMovies(movies)
             })
             .catch(e => console.log(e))
-
     }, []);
 
     if (selectedMovie) {
@@ -28,16 +30,18 @@ export const MainView = () => {
     }
 
     return (
-        <div>
+        <Row>
             {movies.map((movie) => (
-                <MovieCard
-                    key={movie.id}
-                    movie={movie}
-                    onMovieClick={(newSelectedMovie) => {
-                        setSelectedMovie(newSelectedMovie);
-                    }}
-                />
+                <Col className="md5">
+                    <MovieCard
+                        key={movie.id}
+                        movie={movie}
+                        onMovieClick={(newSelectedMovie) => {
+                            setSelectedMovie(newSelectedMovie);
+                        }}
+                    />
+                </Col>
             ))}
-        </div>
+        </Row>
     );
 };

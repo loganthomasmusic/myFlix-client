@@ -1,4 +1,5 @@
 import PropType from "prop-types";
+import { Button, Card, CardBody } from "react-bootstrap";
 
 export const MovieCard = ({ movie, onMovieClick }) => {
     return (
@@ -23,15 +24,3 @@ MovieCard.propTypes = {
         imageUrl: PropType.string.isRequired,
     }).isRequired
 };
-
-/*export const MovieCard = ({ movie, onMovieClick }) => {
-    return (
-        <div
-            onClick={() => {
-                onMovieClick(movie);
-            }}
-        >
-            {movie.title}
-        </div>
-    );
-};*/
