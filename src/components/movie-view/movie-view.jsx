@@ -1,20 +1,14 @@
-import { useParams } from 'react-router';
-import './movie-view.scss';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import "./movie-view.scss";
 
-export const MovieView = ({ movies, onBackClick }) => {
+export const MovieView = ({ movies }) => {
     const { movieId } = useParams();
-    const [movie] = useState(movies.find((mov) => mov._id == movieId));
 
-    console.log(movie);
-    console.log(movies);
-    console.log(movieId);
+    const movie = movies.find((b) => b.id === bookId)
 
-    if (!movie) return <>Loading...</>
-    else
-
-        return (
+    return (
+        <div>
             <div>
                 <div>
                     <img src={location.href.split("/movies")[0] + "/" + movie.ImagePath} />
@@ -35,5 +29,17 @@ export const MovieView = ({ movies, onBackClick }) => {
                     Back
                 </Link>
             </div>
-        );
+            <div>
+                <span>Title: </span>
+                <span>{movie.title}</span>
+            </div>
+            <div>
+                <span>Director: </span>
+                <span>{movie.director}</span>
+            </div>
+            <Link to={`/`}>
+                <button className="back-button">Back</button>
+            </Link>
+        </div>
+    );
 };

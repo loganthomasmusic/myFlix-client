@@ -9,8 +9,10 @@
   "description": "",
   "dependencies": {
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.3",
     "react-dom": "^18.3.1",
-    "redux": "^5.0.1"
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
