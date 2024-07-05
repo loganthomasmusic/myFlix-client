@@ -41,7 +41,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 <Col xs={12}>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formUsername">
-                            <Form.Label>Test:</Form.Label>
+                            <Form.Label>Username:</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={username}
